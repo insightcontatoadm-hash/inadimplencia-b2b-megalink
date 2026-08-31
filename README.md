@@ -1,6 +1,6 @@
 # Inadimplência B2B — Megalink
 
-Relatório HTML autocontido para a carteira inadimplente dos grupos **Carrier, Corporativo, ISP e Governo**, segmentada por grupo e consultor/vendedor.
+Relatório HTML autocontido para a carteira inadimplente de **todos os grupos de serviços**, segmentada por grupo e consultor/vendedor. Ao abrir, o filtro de grupo fica pré-selecionado em **Carrier, Corporativo, ISP e Governo**; basta limpar esse filtro para visualizar os demais grupos.
 
 ## Abrir
 
@@ -28,7 +28,7 @@ A extração usa o `db.py` da raiz, com sessão PostgreSQL somente leitura, time
 ## Contrato do indicador
 
 - **Grão:** um serviço (`cliente_servico`) inadimplente.
-- **Grupos:** `Corporativo` e `Governo`; `Carrier%` é rotulado como `Carrier`; `ISP%` é rotulado como `ISP`.
+- **Grupos:** todos os grupos cadastrados no HubSoft entram na base; `Carrier%` é rotulado como `Carrier` e `ISP%` como `ISP`. O filtro inicial mantém `Carrier`, `Corporativo`, `ISP` e `Governo` selecionados.
 - **Carteira:** status de serviço 11, 12, 13, 14 ou 15.
 - **Cobranças:** ativas, não canceladas, não recebidas, status `aguardando` ou `baixado_parcial`, com vencimento anterior à data de referência e saldo vencido positivo.
 - **Saldo vencido:** `valor - valor_pago` para baixa parcial; `valor` para os demais status elegíveis.
